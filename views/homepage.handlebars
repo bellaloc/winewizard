@@ -1,0 +1,117 @@
+{{!-- 
+{{#if pairings.length}}
+
+{{#each pairings as |pairing| }}
+
+{{/each}}
+
+{{/if}} --}}
+<link rel="stylesheet" href="/css/homepage.css">
+
+<section class="home">
+
+  <div class="container text-center">
+          <div class="row">
+            <h1>Welcome {{ userNameData }}!</h1>
+
+            {{!-- <nav class="navbar bg-body-tertiary"> --}}
+              <div class="container-fluid">
+                <p>Quick Match:</p>
+                <form class="d-flex" id="searchbar" role="search">
+                  <input class="form-control me-2" id="search-input" type="search" placeholder="Enter Food Keywords (Suggestions: buttery, tart, robust...)" aria-label="Search">
+                  <button class="btn btn-outline-light text-white" type="submit">Search</button>
+                </form>
+              </div>
+            {{!-- </nav> --}}
+          <div id="searchbar-results"></div>
+
+            <div id="section1" class="col-8">
+            
+              <div id="search-dropdowns" class="col">
+                  <div class="col-12 col-md-8 mb-3">
+                    <div class="card">
+                      <h3 class="card-header">
+                        Welcome to your personal pairings menu!
+                      </h3>
+                      <div class="card-body" id="meal-choice">
+                          <p class="card-text" id="wine-dropdown">
+                            Please choose a type of wine you have recently purchased:</p>
+                          <p><select class="form-select" id="wine-dropdown-choice" aria-label="Default select example">
+                            <option selected value="">I would like to drink:</option>
+                            <option value="white">A White Wine</option>
+                            <option value="red">A Red Wine</option>
+                          </select>
+                          <p><select class="form-select" id="second-dropdown-wine-choice" aria-label="Default select example">
+                            <option></option>
+                          </select>
+                          </p>
+                        <p>or</p>
+                        <p id="food-dropdown">Please select which type of meal you will be enjoying with your bottle of wine:</p>
+                        <p><select class="form-select" id="food-dropdown-choice" aria-label="Default select example">
+                          <option selected value="">My main dish consists of:</option>
+                          <option value="White Meat">White Meat</option>
+                          <option value="Red Meat">Red Meat</option>
+                          <option value="Pasta">Pasta</option>
+                          <option value="Vegetables">Vegetables</option>
+                          <option value="Seafood">Seafood</option>
+                          <option value="Cheese">Cheese</option>
+                          <option value="Dessert">Dessert</option>
+                        </select>    
+                        <p><select class="form-select" id="second-dropdown-meal-choice" aria-label="Default select example">
+                          <option></option>
+                      </select>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              <div id="user-pairings" class="col-12 col-md-4">
+              <div class="row">
+                  <div class="col-8">
+                    <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+                      <h2>Pairings you have chosen in the past: </h2>
+                      {{#each userPairings as |pairing|}}
+                      <br>
+                      <h4 id="user-pairing"><i>{{pairing.wine.wine_type}}</i></h4>
+                      <p>A {{pairing.wine.wine_name}} paired with {{pairing.food.food_name}}</p>
+                      {{/each}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="/images/WineSlide1.jpg" class="d-block w-100" alt="wine-1">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="/images/WineSlide2.jpg" class="d-block w-100" alt="wine-2">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="/images/WineSlide3.jpg" class="d-block w-100" alt="wine-3">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="/images/WineSlide4.jpg" class="d-block w-100" alt="wine-4">
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+            </div>
+
+
+          </div>
+          <script src="/js/dropdown.js"></script>
+          <script src="/js/searchbar.js"></script>
+    </div>
+  </section>
