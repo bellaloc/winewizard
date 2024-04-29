@@ -1,6 +1,6 @@
 # Wine Wizard
 
-## UCLA Bootcamp Project 2
+## UCLA 
 
 ## Description
 
@@ -34,4 +34,4 @@ Visit the deployed app at: https://winewizard-d0570344d348.herokuapp.com/
 <img src="./public/images/wine-wizard-screenshot.png" alt="screenshot"/>
 
 ## Credits
-This project was created by Ramita Indurkhya, Christa Lococo, John Huber, and Eric Lee.
+This project was created by Christa Lococo, Ramita Indurkhya, John Huber, and Eric Lee.
